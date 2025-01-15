@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9a7475ef-1f03-4ce3-b16b-1fd83ba39b1c}">
+		<property name="assetPath">
+			<value>Unlock.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.74531250000000004</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ea0f17d7-dd82-4fdd-9659-b4970e2aa56f}</destination>
+		</relationship>
+	</object>
+</objects>

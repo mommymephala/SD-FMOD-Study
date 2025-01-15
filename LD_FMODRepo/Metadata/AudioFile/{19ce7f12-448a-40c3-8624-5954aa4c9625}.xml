@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{19ce7f12-448a-40c3-8624-5954aa4c9625}">
+		<property name="assetPath">
+			<value>Torch/FizzleOut/FizzleOut.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.69998958333333339</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ea0f17d7-dd82-4fdd-9659-b4970e2aa56f}</destination>
+		</relationship>
+	</object>
+</objects>

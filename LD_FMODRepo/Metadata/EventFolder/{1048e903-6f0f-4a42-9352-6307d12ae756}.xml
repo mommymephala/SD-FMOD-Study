@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{1048e903-6f0f-4a42-9352-6307d12ae756}">
+		<property name="name">
+			<value>LockPick</value>
+		</property>
+		<relationship name="folder">
+			<destination>{2debd1ee-f5ce-4107-a087-55109e4e96b9}</destination>
+		</relationship>
+	</object>
+</objects>

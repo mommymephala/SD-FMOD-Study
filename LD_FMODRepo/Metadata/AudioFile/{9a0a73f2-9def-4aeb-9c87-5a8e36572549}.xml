@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9a0a73f2-9def-4aeb-9c87-5a8e36572549}">
+		<property name="assetPath">
+			<value>Walk/Carpet/CarpetWalk1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.25997732426303855</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ea0f17d7-dd82-4fdd-9659-b4970e2aa56f}</destination>
+		</relationship>
+	</object>
+</objects>
