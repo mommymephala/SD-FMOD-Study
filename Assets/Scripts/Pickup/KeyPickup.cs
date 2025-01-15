@@ -12,7 +12,7 @@ public class KeyPickup : PickupAction
         {
             inventory.AddKey(key);
             Debug.Log($"Picked up key: {key.keyName}");
-            AudioManager.instance.PlayRandomSound(AudioManager.instance.pickupSounds);
+            AudioManager.instance.PlaySound(AudioManager.instance.pickupSoundEvents);
         }
         else
         {

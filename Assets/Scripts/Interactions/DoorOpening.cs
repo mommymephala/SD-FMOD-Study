@@ -68,7 +68,7 @@ public class DoorOpening : MonoBehaviour, IInteractable
         isOpen = true;
         isInteractable = false; // Prevent interaction during animation
 
-        AudioManager.instance?.PlaySound(AudioManager.instance.doorOpenSound);
+        AudioManager.instance.PlaySoundAtPosition(AudioManager.instance.doorOpenEvent, transform.position);
 
         if (_animationCoroutine != null)
         {
@@ -91,7 +91,7 @@ public class DoorOpening : MonoBehaviour, IInteractable
         isOpen = false;
         isInteractable = false; // Prevent interaction during animation
 
-        AudioManager.instance?.PlaySound(AudioManager.instance.doorOpenSound);
+        AudioManager.instance.PlaySoundAtPosition(AudioManager.instance.doorOpenEvent, transform.position);
 
         if (_animationCoroutine != null)
         {

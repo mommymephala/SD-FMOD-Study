@@ -31,8 +31,7 @@ public class FireballShooter : MonoBehaviour
             mainModule.startLifetime = fireballLifetime;
         }
 
-        AudioManager.instance.PlaySound(AudioManager.instance.fireSound);
-
+        AudioManager.instance.PlaySoundAtPosition(AudioManager.instance.fireEvent, fireballParticles.transform.position);
         Destroy(fireball, fireballLifetime);
     }
 }

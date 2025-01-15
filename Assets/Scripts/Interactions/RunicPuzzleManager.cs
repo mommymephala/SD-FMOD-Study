@@ -53,6 +53,6 @@ public class RunicPuzzleManager : MonoBehaviour
         }
 
         // Optional: Play a sound or visual effect
-        AudioManager.instance?.PlaySound(AudioManager.instance.puzzleSolvedSound);
+        AudioManager.instance?.PlaySound(AudioManager.instance.puzzleSolvedEvent);
     }
 }

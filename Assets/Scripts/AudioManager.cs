@@ -1,52 +1,57 @@
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    private AudioSource audioSource;
-
-    public AudioClip[] lockpickSounds;
-    public AudioClip chestUnlockSound;
-    public AudioClip runeActivation;
-    public AudioClip puzzleSolvedSound;
-    public AudioClip fireSound;
-    public AudioClip[] pickupSounds;
-    public AudioClip errorSound;
-    public AudioClip doorOpenSound;
-    public AudioClip gameOverSound;
+    [Header("FMOD Event References")]
+    public EventReference lockpickSoundEvents;
+    public EventReference pickupSoundEvents;
+    public EventReference chestUnlockEvent;
+    public EventReference runeActivationEvent;
+    public EventReference puzzleSolvedEvent;
+    public EventReference fireEvent;
+    public EventReference errorEvent;
+    public EventReference doorOpenEvent;
+    public EventReference gameOverEvent;
 
     void Awake()
     {
-        // Singleton pattern setup
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);  // Keep the AudioManager across scenes
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
-
-        audioSource = GetComponent<AudioSource>();
     }
 
-    // Play random sound from an array (used for lockpicking and pickup)
-    public void PlayRandomSound(AudioClip[] clips)
+    public void PlaySound(EventReference eventReference)
     {
-        if (clips.Length == 0) return;
+        if (eventReference.IsNull) return;
 
-        int randomIndex = Random.Range(0, clips.Length);
-        audioSource.PlayOneShot(clips[randomIndex]);
+        RuntimeManager.PlayOneShot(eventReference);
     }
 
-    // Play specific sound (used for chest unlock, error, door open, etc.)
-    public void PlaySound(AudioClip clip)
+    public void PlaySoundAtPosition(EventReference eventReference, Vector3 position)
     {
-        if (clip != null)
-        {
-            audioSource.PlayOneShot(clip);
-        }
+        if (eventReference.IsNull) return;
+
+        RuntimeManager.PlayOneShot(eventReference, position);
+    }
+
+    // Example of playing a sound with parameters (optional enhancement)
+    public void PlaySoundWithParameter(EventReference eventReference, string parameterName, float parameterValue)
+    {
+        if (eventReference.IsNull) return;
+
+        EventInstance instance = RuntimeManager.CreateInstance(eventReference);
+        instance.setParameterByName(parameterName, parameterValue);
+        instance.start();
+        instance.release(); // Release the instance after playback
     }
 }

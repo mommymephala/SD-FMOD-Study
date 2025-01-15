@@ -12,7 +12,7 @@ public class LockpickPickup : PickupAction
         {
             inventory.AddLockpicks(quantity);
             Debug.Log($"Picked up {quantity} lockpick(s)!");
-            AudioManager.instance.PlayRandomSound(AudioManager.instance.pickupSounds);
+            AudioManager.instance.PlaySound(AudioManager.instance.pickupSoundEvents);
         }
     }
 

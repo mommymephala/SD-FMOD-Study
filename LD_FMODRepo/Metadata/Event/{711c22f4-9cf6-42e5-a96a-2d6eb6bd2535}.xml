@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{711c22f4-9cf6-42e5-a96a-2d6eb6bd2535}">
 		<property name="name">
-			<value>LockPickUnlock</value>
+			<value>LockpickUnlock</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>

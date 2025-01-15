@@ -15,7 +15,7 @@ public class RuneStone : MonoBehaviour
     public void ActivateRune()
     {
         isActivated = true;
-        AudioManager.instance?.PlaySound(AudioManager.instance.runeActivation);
+        AudioManager.instance?.PlaySound(AudioManager.instance.runeActivationEvent);
 
         RunicPuzzleManager.Instance.RuneActivated();
     }

@@ -62,7 +62,7 @@ public class LockpickingSystem : MonoBehaviour, IInteractable
                     moved = true;
 
                     // Play a random lockpicking sound
-                    AudioManager.instance.PlayRandomSound(AudioManager.instance.lockpickSounds);
+                    AudioManager.instance.PlaySound(AudioManager.instance.lockpickSoundEvents);
                 }
                 else if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -70,7 +70,7 @@ public class LockpickingSystem : MonoBehaviour, IInteractable
                     moved = true;
 
                     // Play a random lockpicking sound
-                    AudioManager.instance.PlayRandomSound(AudioManager.instance.lockpickSounds);
+                    AudioManager.instance.PlaySound(AudioManager.instance.lockpickSoundEvents);
                 }
 
                 // Clamp the lockpick rotation between 0 and 360 degrees
