@@ -7,23 +7,23 @@ public class DoorOpening : MonoBehaviour, IInteractable
     [SerializeField] private float speed = 1f;
 
     [Header("Door Type Configs")]
-    [SerializeField] private bool isRotatingDoor = true;  // Set to true for rotating door, false for sliding
+    [SerializeField] private bool isRotatingDoor = true;
 
     [Header("Sliding Configs")]
     [SerializeField] private Vector3 slideDirection = Vector3.right;
     [SerializeField] private float slideAmount = 3f;
 
     [Header("Rotation Configs")]
-    [SerializeField] private float rotationAmount = -90f;  // Rotation amount in degrees
+    [SerializeField] private float rotationAmount = -90f;
 
     [Header("Key Requirements")]
-    public Key requiredKey; // Reference to the key required to open this door
+    public Key requiredKey;
 
     private Vector3 _startPosition;
     private Vector3 _endPosition;
     private Vector3 _startRotation;
     private Coroutine _animationCoroutine;
-    private bool isInteractable = true; // Prevent interaction during animation
+    private bool isInteractable = true;
 
     private void Awake()
     {
@@ -38,14 +38,24 @@ public class DoorOpening : MonoBehaviour, IInteractable
 
         if (isOpen)
         {
-            Close(); // Close the door if it's already open
+            Close();
         }
         else
         {
             if (requiredKey != null && !PlayerInventory.Instance.HasKey(requiredKey))
             {
                 Debug.Log($"You need the {requiredKey.keyName} to open this door.");
+                AudioManager.instance.PlaySound(AudioManager.instance.errorEvent);
                 return;
+            }
+
+            if (requiredKey != null && PlayerInventory.Instance.HasKey(requiredKey))
+            {
+                AudioManager.instance.PlaySoundAtPosition(AudioManager.instance.doorUnlockEvent, transform.position);
+            }
+            else
+            {
+                AudioManager.instance.PlaySoundAtPosition(AudioManager.instance.doorOpenEvent, transform.position);
             }
 
             Open();
@@ -67,8 +77,6 @@ public class DoorOpening : MonoBehaviour, IInteractable
         if (isOpen) return;
         isOpen = true;
         isInteractable = false; // Prevent interaction during animation
-
-        AudioManager.instance.PlaySoundAtPosition(AudioManager.instance.doorOpenEvent, transform.position);
 
         if (_animationCoroutine != null)
         {

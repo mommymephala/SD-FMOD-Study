@@ -32,6 +32,16 @@ namespace ECM.Controllers
         [SerializeField]
         private float _runSpeedMultiplier = 2.0f;
 
+        [Header("Footstep Settings")]
+        [Tooltip("Time interval between footstep sounds (walking).")]
+        [SerializeField] private float walkStepInterval = 0.5f;
+
+        [Tooltip("Time interval between footstep sounds (running).")]
+        [SerializeField] private float runStepInterval = 0.3f;
+
+        [Tooltip("Reference to GroundDetection component.")]
+        [SerializeField] private ECM.Components.GroundDetection groundDetection;
+
         #endregion
 
         #region PROPERTIES
@@ -100,9 +110,53 @@ namespace ECM.Controllers
 
         public bool run { get; set; }
 
+        private float footstepTimer;
+
         #endregion
 
         #region METHODS
+
+        /// <summary>
+        /// Play a footstep sound based on the current ground surface.
+        /// </summary>
+        protected virtual void PlayFootstepSound()
+        {
+            RaycastHit hitInfo;
+
+            // Use GroundDetection to perform a ground check and retrieve hit information
+            if (groundDetection.FindGround(Vector3.down, out hitInfo))
+            {
+                // Get the tag of the detected ground collider
+                string surfaceTag = hitInfo.collider.tag;
+
+                // Use AudioManager to play the footstep sound
+                AudioManager.instance.PlayFootstep(surfaceTag, transform.position);
+            }
+        }
+
+        /// <summary>
+        /// Handle footstep sound logic.
+        /// </summary>
+        protected void HandleFootsteps()
+        {
+            if (isGrounded && moveDirection != Vector3.zero)
+            {
+                // Determine step interval based on movement state
+                float stepInterval = run ? runStepInterval : walkStepInterval;
+
+                footstepTimer += Time.deltaTime;
+
+                if (footstepTimer >= stepInterval)
+                {
+                    PlayFootstepSound();
+                    footstepTimer = 0f;
+                }
+            }
+            else
+            {
+                footstepTimer = 0f;
+            }
+        }
 
         /// <summary>
         /// Use this method to animate camera.
@@ -280,6 +334,14 @@ namespace ECM.Controllers
                 cameraTransform = cam.transform;
                 mouseLook.Init(transform, cameraTransform);
             }
+        }
+
+        public override void Update()
+        {
+            base.Update();
+
+            // Handle footsteps in Update loop
+            HandleFootsteps();
         }
 
         public virtual void LateUpdate()

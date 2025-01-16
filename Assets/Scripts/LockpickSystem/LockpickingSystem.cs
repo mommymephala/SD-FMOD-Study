@@ -1,6 +1,7 @@
 using ECM.Components;
 using ECM.Controllers;
 using UnityEngine;
+using FMODUnity;
 
 public class LockpickingSystem : MonoBehaviour, IInteractable
 {
@@ -156,6 +157,9 @@ public class LockpickingSystem : MonoBehaviour, IInteractable
         isChestUnlocked = true; // Mark the chest as unlocked
         StopLockpicking();
 
+        // Play the lockpick unlock sound
+        AudioManager.instance.PlaySound(AudioManager.instance.lockpickUnlockEvent);
+
         if (rewardObject != null)
         {
             rewardObject.SetActive(true); // Activate or spawn the unique reward
@@ -167,6 +171,7 @@ public class LockpickingSystem : MonoBehaviour, IInteractable
     void FailLockpick()
     {
         Debug.Log("Lockpick failed!");
+        AudioManager.instance.PlaySound(AudioManager.instance.errorEvent);
         playerInventory.UseLockpick(); // Deduct a lockpick on failure
 
         if (playerInventory.GetLockpickCount() > 0)
