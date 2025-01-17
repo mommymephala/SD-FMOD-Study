@@ -139,7 +139,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{d4ec6d47-7c31-4c6b-aa6a-baeeb36b2829}">
 		<property name="volume">
-			<value>-10.5</value>
+			<value>-13.5</value>
 		</property>
 		<property name="name">
 			<value>Basic Walk</value>
@@ -171,6 +171,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{562eb7c6-6ad8-47b4-82ee-078a6b15c423}">
+		<property name="volume">
+			<value>-5</value>
+		</property>
 		<property name="name">
 			<value>CarpetWalk</value>
 		</property>
@@ -202,6 +205,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{b73f4595-ddf9-4e1c-81ec-2b65b48cc637}">
+		<property name="volume">
+			<value>-5</value>
+		</property>
 		<property name="name">
 			<value>SandWalk</value>
 		</property>
