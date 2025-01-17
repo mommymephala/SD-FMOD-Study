@@ -27,6 +27,54 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &-8941784922894718710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SecondFloor/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 367186976
+    data2: 4063749506
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-8347883116422615680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FirstFloor/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 367186976
+    data2: 4063749506
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-7847412211598083678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +265,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
+--- !u!114 &-2652291256424181314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/SecondFloor
+  m_EditorClassIdentifier: 
+  Path: snapshot:/SecondFloor
+  Guid:
+    Data1: 1125485179
+    Data2: 1215845449
+    Data3: 1795881883
+    Data4: 1288785081
+  Banks:
+  - {fileID: 4461761903382621128}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8941784922894718710}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-1554631418199963045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,12 +488,14 @@ MonoBehaviour:
   - {fileID: -747680583593290917}
   - {fileID: -5433591387296613726}
   - {fileID: -231709160987098700}
+  - {fileID: -2652291256424181314}
+  - {fileID: 2574853926707545964}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4461761903382621128}
   StringsBanks:
   - {fileID: 4058707555104234904}
-  cacheTime: 638725880581556207
+  cacheTime: 638726798614738823
   cacheVersion: 131622
 --- !u!114 &469932709208515135
 MonoBehaviour:
@@ -473,6 +551,34 @@ MonoBehaviour:
   - Carpet
   - Sand
   Exists: 1
+--- !u!114 &2574853926707545964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/FirstFloor
+  m_EditorClassIdentifier: 
+  Path: snapshot:/FirstFloor
+  Guid:
+    Data1: 438067355
+    Data2: 1158929447
+    Data3: -403587925
+    Data4: 965922343
+  Banks:
+  - {fileID: 4461761903382621128}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8347883116422615680}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &4058707555104234904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,10 +594,10 @@ MonoBehaviour:
   Path: LD_FMODRepo/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638725880581556207
+  lastModified: 638726798614738823
   FileSizes:
   - Name: Desktop
-    Value: 1662
+    Value: 2774
   Exists: 1
 --- !u!114 &4461761903382621128
 MonoBehaviour:
@@ -508,10 +614,10 @@ MonoBehaviour:
   Path: LD_FMODRepo/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638725880581551075
+  lastModified: 638726798614713357
   FileSizes:
   - Name: Desktop
-    Value: 4791264
+    Value: 4796480
   Exists: 1
 --- !u!114 &5397526516938624047
 MonoBehaviour:

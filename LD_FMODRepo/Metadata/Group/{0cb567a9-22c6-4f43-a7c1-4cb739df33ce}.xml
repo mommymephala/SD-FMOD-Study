@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{0cb567a9-22c6-4f43-a7c1-4cb739df33ce}">
+		<property name="volume">
+			<value>-8</value>
+		</property>
+		<property name="name">
+			<value>MusFirstFloor</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{6a955c7b-7374-4f5a-90eb-f7e941743803}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{ed9aabdb-847e-4c74-ab53-9af83812f632}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{da78cb48-690c-49ac-bd7f-4041b18fe0ab}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{6a955c7b-7374-4f5a-90eb-f7e941743803}">
+		<relationship name="effects">
+			<destination>{bd039479-c7c1-4997-8d6d-9f203d86de36}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{ed9aabdb-847e-4c74-ab53-9af83812f632}" />
+	<object class="MixerBusFader" id="{bd039479-c7c1-4997-8d6d-9f203d86de36}" />
+</objects>

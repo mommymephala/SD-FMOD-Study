@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{ca449903-d94e-456f-b3ff-6638c69cce22}">
+		<property name="volume">
+			<value>-9.5</value>
+		</property>
+		<property name="name">
+			<value>Con_GameOver</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{1fa109db-3c52-49b2-ae59-b0b0eb0c0a5e}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{edd3fef9-4116-4418-943b-d9bfbc41feda}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{3f586f79-a1a2-48f4-b3e2-a99104664d2b}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{1fa109db-3c52-49b2-ae59-b0b0eb0c0a5e}">
+		<relationship name="effects">
+			<destination>{7835a4bc-92ce-42da-bfe6-0bafa97d7984}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{edd3fef9-4116-4418-943b-d9bfbc41feda}" />
+	<object class="MixerBusFader" id="{7835a4bc-92ce-42da-bfe6-0bafa97d7984}" />
+</objects>

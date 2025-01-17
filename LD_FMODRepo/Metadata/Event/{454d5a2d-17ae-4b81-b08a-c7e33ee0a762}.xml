@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{454d5a2d-17ae-4b81-b08a-c7e33ee0a762}">
-		<property name="note" />
 		<property name="name">
 			<value>FizzleOut</value>
 		</property>
@@ -54,7 +53,7 @@
 			<destination>{f7123e84-c528-442d-b08c-41f5f467a79e}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{fe64c20f-5183-4b86-bbd6-1bf74d5b357f}</destination>
+			<destination>{a84fab66-b353-4012-8a78-0f5f6683226e}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{b336bce4-e6e5-412e-8c5a-f495682375e6}" />

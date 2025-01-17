@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{92bf9ff4-bd7d-4979-b99a-a3796565ae4d}">
+		<property name="volume">
+			<value>-13</value>
+		</property>
+		<property name="name">
+			<value>Env_RuneStone</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{83c08666-051a-4d5a-b0ff-0df04929bb6a}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{c85480cc-71b4-4bd5-9f9c-7255978660a8}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{8d7b447f-8140-497e-b346-23289857143c}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{83c08666-051a-4d5a-b0ff-0df04929bb6a}">
+		<relationship name="effects">
+			<destination>{9ca2ebea-5205-46fb-b0f4-80735842e2bd}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{c85480cc-71b4-4bd5-9f9c-7255978660a8}" />
+	<object class="MixerBusFader" id="{9ca2ebea-5205-46fb-b0f4-80735842e2bd}" />
+</objects>
